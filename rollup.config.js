@@ -23,9 +23,9 @@ let banner = `/*!
  * ${pkg.homepage || 'https://github.com/vueup/vue-quill'}
  * `
 
-banner += pkg.dependencies?.quill?.match(/\d(.*)/)[0]
+banner += pkg.dependencies.quill.match(/\d(.*)/)[0]
   ? `
- * Includes quill v${pkg.dependencies?.quill?.match(/\d(.*)/)[0]}
+ * Includes quill v${pkg.dependencies.quill.match(/\d(.*)/)[0]}
  * https://quilljs.com/
  * `
   : ''

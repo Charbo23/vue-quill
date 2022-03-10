@@ -111,10 +111,14 @@ export const QuillEditor = defineComponent({
       if (props.modules) {
         if (Array.isArray(props.modules)) {
           for (const module of props.modules) {
-            Quill.register(`modules/${module.name}`, module.module)
+            if(module.name && module.module){
+              Quill.register(`modules/${module.name}`, module.module)
+            }
           }
         } else {
-          Quill.register(`modules/${props.modules.name}`, props.modules.module)
+          if(props.modules.name && props.modules.module){
+            Quill.register(`modules/${props.modules.name}`, props.modules.module)
+          }
         }
       }
       // Create new Quill instance
